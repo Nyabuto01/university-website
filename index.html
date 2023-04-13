@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Universities in Germany</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+        body {
+            border:0;
+            background-color: powderblue;
+            border: 2cm;
+        }
+      .header{
+        background-color: blue;
+        border:1px;
+        font-size: 40px;
+        width: 100%;
+        height: 150px;
+        text-align: center;
+        position: fixed;
+        align-items: center;
+        position: fixed;
+
+
+      }
+      h1 {
+        font-size: 50px;
+        margin: auto;
+        font-weight: bolder;
+        align-items: center;
+        box-shadow: inset;
+        color:gray
+        
+      }
+      .university{
+        margin-left: 30%;
+        border-radius: 30px;
+        margin-top: 25%;
+        width: 700px;
+        display: block;
+        height: 400px;
+        display: inline-block;
+        background-color: lavender;
+      }
+      .university-d{
+        margin-left: 50%;
+        border-radius: 30px;
+        margin-top: 25%;
+        width: 700px;
+        display: block;
+        height: 900px;
+        display: inline-block;
+        background-color: lavender;
+      }
+      h2{
+        font-size: 30px;
+        left: 30%;
+        color: blueviolet;
+        
+      }
+      p{
+        font-size:20px;
+        font-weight: lighter;
+      }
+      .list_of_university{
+        width: 280px;
+        height: 430px;
+        border: 2px solid gray;
+        margin-top:15%;
+        margin-left: -1%;
+        display: block;
+        background-color:lightgreen;
+        position: fixed;
+
+      }
+      #tum-d, #hu-d, #ihu-d, #huob-d,#fuob-d,#uoc-d,#uob-d,#uos-d,#uom-d,#uoh-d,#uof-d,#lmu-d,#uoen-d,#uog-d,#uow-d,#uofr-d,#uoj-d,#uol-d,#uot-d,#uom-d,#rau-d{
+         display:none;
+         margin-left: 50%;
+        border-radius: 30px;
+        width: 700px;
+        height: 250px;
+        background-color: lavender;
+      }
+      .main{
+        display: flex;
+        background-color: transparent;
+        margin-left: auto;
+
+      }
+      .container{
+        background-color: transparent;
+      }
+      .display{
+        display:inline-block;
+        margin-top: 25%;
+      }
+      button{
+        border: 1px solid greenyellow;
+        font-size: 13px;
+        background-color: transparent;
+        border-radius: 20px;
+        width: 250px;
+      }
+      .hr{
+        transform: rotate(deg90);
+        background-color: greenyellow;
+        height: 3px;
+        width: 100%;
+        position: fixed;
+        margin-top: 12%;
+      }
+      .first_page_btns{
+        display: block;
+      }
+      .second_page_btns{
+        display: none;
+      }
+      .third_page_btns{
+        display: none;
+      }
+      .upload{
+        display: none;
+        height: fit-content;
+        width: 400px;
+        position: fixed;
+        border-radius: 30px;
+      }
+      .applydoc_container{
+        width: 150px;
+        height: 200px;
+        border: 1px solid black;
+      }
+      .btn{
+        margin-top: 1%;
+        display: block;
+      }
+      .apply{
+        background-color: lavender;
+        width: fit-content;
+        display: block;
+        position: inherit;
+        margin-left:40%;
+        height: fit-content;
+        display: none;
+      }
+    </style>
+</head>
+<body>
+	<header class="header">
+        <h1>
+		  Sponsored Universities 
+        </h1>
+	</header>
+    <hr class="hr">       
+<div class="main"> 
+ <div class="list_of_university">  
+  <center><h3 style="color:red; font-size: 20px;font-weight: bolder;">List of Universities:</h3></center> 
+   <div class="first_page_btns" id="first_page_btns">       
+    <button onclick="university(1)" id="btn1">Technical University of Munich (TUM)</button><br><br>
+    <button onclick="university(2)" id="btn2">Heidelberg University</button><br><br>
+    <button onclick="university(3)" id="btn3">Humboldt University of Berlin</button><br><br>
+    <button onclick="university(4)" id="btn4">Free University of Berlin</button><br><br>
+    <button onclick="university(5)" id="btn5">University of Cologne</button><br><br>
+    <button onclick="university(6)" id="btn6">University of Bonn</button><br><br>
+    <button onclick="university(7)" id="btn7">University of Stuttgart</button><br><br>
+    
+    
+   </div>  
+   <div class="second_page_btns" id="second_page_btns"> 
+    <button onclick="university(8)" id="btn8">University of Mannheim</button><br><br>
+    <button onclick="university(9)" id="btn9">University of Hamburg</button><br><br>
+    <button onclick="university(10)" id="btn10">University of Frankfurt</button><br><br>
+    <button onclick="university(11)" id="btn11">University of Munich (LMU)</button><br><br>
+    <button onclick="university(12)" id="btn12">University of Erlangen-Nuremberg</button><br><br>
+    <button onclick="university(13)" id="btn13">University of Göttingen</button><br><br>
+    <button onclick="university(14)" id="btn14">University of Würzburg</button><br><br>
+    
+   </div>    
+   <div class="third_page_btns">
+    <button onclick="university(15)" id="btn15">University of Freiburg</button><br><br>
+    <button onclick="university(16)" id="btn16">University of Jena</button><br><br>
+    <button onclick="university(17)" id="btn17">University of Leipzig</button><br><br>
+    <button onclick="university(18)" id="btn18">University of Tübingen</button><br><br>
+    <button onclick="university(19)" id="btn19">University of Münster</button><br><br>
+    <button onclick="university(20)" id="btn20">RWTH Aachen University</button><br><br>
+   </div>
+  <div class="btn" style="display: flex;"></div> 
+   <center><button onclick="decide(1)"style="background-color: purple;width: fit-content;">Prevoius</button></center>
+   <center><button onclick="decide(2)"style="background-color: purple;width: fit-content;margin-top:10%">Next</button></center>
+</div>  
+        <script>
+         var no_btns = [
+            "btn1",
+            "btn2",
+            "btn3",
+            "btn4",
+            "btn5",
+            "btn6",
+            "btn7",
+            "btn8",
+            "btn9",
+            "btn10",
+            "btn11",
+            "btn12",
+            "btn13",
+            "btn14",
+            "btn15",
+            "btn16",
+            "btn17",
+            "btn18",
+            "btn19",
+            "btn20"
+         ];   
+         function hide_btn(button){
+            var chan = document.getElementById(button);
+            chan.style.color = 'purple';
+            chan.style.fontSize = '15px';
+            for(var l = 0; l < no_btns.length; ++l){
+                if(no_btns[l] != button){
+                    var ch = document.getElementById(no_btns[l]);
+                    ch.style.color = 'black';
+                    ch.style.fontSize = '13px';
+                }
+            }
+         }
+         var no_page_btns = [
+            "first_page_btns",
+            "second_page_btns",
+            "third_page_bns"
+         ];   
+         function hide(display, hide1, hide2){
+          for(var e = 0; e < no_page_btns.length; ++e){
+            if(no_page_btns[e] != display){
+               var op = document.getElementById(display);
+               op.style.display = 'block';
+               var cl = document.getElementById(hide1);
+               cl.style.display = 'none';
+               var cl1 = document.getElementById(hide2);
+               cl1.style.display = 'none';
+            }
+          }
+         }
+         function decide(value){
+           if(value == 1){
+              hide('first_page_btns', 'second_page_btns', 'third_page_btns')
+           } else if(value == 2){
+            hide('second_page_btns', 'first_page_btns', 'third_page_btns')
+           } else {
+            hide('third_page_btns', 'second_page_btns', 'first_page_btns')
+           }
+           
+         }   
+         var univer_display = [
+                "tum-d",
+                "hu-d",
+                "huob-d",
+                "fuob-d",
+                "uoc-d",
+                "uob-d",
+                "uos-d",
+                "uom-d",
+                "uoh-d",
+                "uof-d",
+                "lmu-d",
+                "uoen-d",
+                "uog-d",
+                "uow-d",
+                "uofr-d",
+                "uoj-d",
+                "uol-d",
+                "uot-d",
+                "uom-d",
+                "rau-d"
+            ];
+            var univer = [
+                "tum",
+                "hu",
+                "huob",
+                "fuob",
+                "uoc",
+                "uob",
+                "uos",
+                "uom",
+                "uoh",
+                "uof",
+                "lmu",
+                "uoen",
+                "uog",
+                "uow",
+                "uofr",
+                "uoj",
+                "uol",
+                "uot",
+                "uom",
+                "rau"
+            ];
+        function perform_operations(display_id, hide_id){
+            //this line will display the id passed in the display
+            var display = document.getElementById(display_id);
+            display.style.display = "block";
+            display.style.marginLeft = '50%';
+            //this line will hide id passed in the container
+            var hide = document.getElementById(hide_id);
+            hide.style.display = 'none';
+            for(var i = 0; i < univer_display.length; ++i){
+                if(univer_display[i] != display_id){
+                  var hide_it = document.getElementById(univer_display[i]);
+                  hide_it.style.display = 'none';
+                }
+            }
+            for(var p = 0; p < univer.length; ++p){
+                if(univer[p] != hide_id){
+                    var disp = document.getElementById(univer[p]);
+                    disp.style.display = 'block';
+                    disp.style.marginLeft = "50%"
+                }
+            }
+        }    
+        function university(value){
+            
+            if(value == 1){
+              perform_operations('tum-d', 'tum');
+              hide_btn('btn1');
+            } else if(value == 2) {
+              perform_operations('hu-d', 'hu');
+              hide_btn('btn2');
+            } else if(value == 3) {
+              perform_operations('huob-d', 'huob');
+              hide_btn('btn3');
+            } else if(value == 4) {
+              perform_operations('fuob-d', 'fuob');  
+              hide_btn('btn4');
+            } else if(value == 5) {
+              perform_operations('uoc-d', 'uoc');  
+              hide_btn('btn5');
+            } else if(value == 6) {
+              perform_operations('uob-d', 'uob')   
+              hide_btn('btn6');
+            } else if(value == 7) {
+              perform_operations('uos-d', 'uos');  
+              hide_btn('btn7');
+            } else if(value == 8) {
+              perform_operations('uom-d', 'uom');   
+              hide_btn('btn8');
+            } else if(value == 9) {
+              perform_operations('uoh-d', 'uoh');  
+              hide_btn('btn9');
+            } else if(value == 10) {
+              perform_operations('uof-d', 'uof');  
+              hide_btn('btn10');
+            } else if(value == 11) {
+              perform_operations('lmu-d', 'lmu');   
+              hide_btn('btn11');
+            } else if(value == 12) {
+              perform_operations('uoen-d', 'uoen');   
+              hide_btn('btn12');
+            } else if(value == 13) {
+              perform_operations('uog-d', 'uog');   
+              hide_btn('btn13');
+            } else if(value == 14) {
+              perform_operations('uow-d', 'uow');
+              hide_btn('btn14');
+            } else if(value == 15) {
+              perform_operations('uofr-d', 'uofr'); 
+              hide_btn('btn15');
+            } else if(value == 16) {
+              perform_operations('uoj-d', 'uoj');   
+              hide_btn('btn16');
+            } else if(value == 17) {
+              perform_operations('uol-d', 'uol');  
+              hide_btn('btn17');
+            } else if(value == 18) {
+              perform_operations('uot-d', 'uot')
+              hide_btn('btn18');
+            } else if(value == 19) {
+              perform_operations('uom-d', 'uom');
+              hide_btn('btn19');  
+            } else {
+              perform_operations('rau-d', 'rau');
+              hide_btn('btn20');
+            }
+        }
+        function apply(){
+            var pos = document.getElementById('apply');
+            pos.style.display = 'block';
+        }
+        </script>
+       <script>
+        function apply(value){
+            var unhide = document.getElementById('apply');
+            unhide.style.display = 'block';
+        }
+        function info(value){
+            if(value == 1){
+                location.href = " https://www.tum.de/en/";
+            } else if(value == 2){
+                location.href = "https://www.uni-heidelberg.de/en ";
+            }else if(value == 3){
+                location.href = "https://www.hu-berlin.de/en ";
+            }else if(value == 4){
+                location.href = " https://www.fu-berlin.de/en/index.html";
+            }else if(value == 5){
+                location.href = "https://portal.uni-koeln.de/en/uoc-home ";
+            }else if(value == 6){
+                location.href = " https://www.uni-bonn.de/en/university";
+            }else if(value == 7){
+                location.href = "https://www.uni-stuttgart.de/en/ ";
+            }else if(value == 8){
+                location.href = "https://www.uni-mannheim.de/";
+            }else if(value == 9){
+                location.href = " https://www.uni-hamburg.de/en.html";
+            }else if(value == 10){
+                location.href = "https://www.goethe-university-frankfurt.de/ ";
+            }else if(value == 12){
+                location.href = "https://www.lmu.de/en/ ";
+            }else if(value == 13){
+                location.href = " https://www.fau.eu/";
+            }else if(value == 14){
+                location.href = "https://www.uni-goettingen.de/en/1.html ";
+            }else if(value == 15){
+                location.href = "https://www.uni-wuerzburg.de/en/university/ ";
+            }else if(value == 16){
+                location.href = " ";
+            }else if(value == 17){
+                location.href = "https://uni-freiburg.de/en/ ";
+            }else if(value == 18){
+                location.href = "https://www.uni-leipzig.de/en ";
+            }else if(value == 19){
+                location.href = " https://www.uni-muenster.de/en/";
+            }else {
+                location.href = "https://www.rwth-aachen.de/ ";
+            }
+        }
+       </script>
+<!-- start of the display of universities-->
+    <div class="container"> 
+        <div id="display">
+        <!-- open of hidden display div-->            
+            <div class="university-d" id="tum-d">
+                <center><h2>Technical University of Munich (TUM) </h2></center>
+                <img src="https://lh3.googleusercontent.com/p/AF1QipMrNCd59jNenil0pv3Obl3-uQJTqSVYRgcOiucY=s1360-w1360-h1020" style="border-radius: 40px;border: 1px solid gray;height: 150px;width: 400px;"
+                <p>The Technical University of Munich (TUM) is a research university with a focus on natural sciences, engineering, and technology. It offers undergraduate and graduate programs in engineering, natural sciences, economics, and medicine.</p>
+                <button onclick="apply(1)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+                <button onclick="info(1)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>
+            </div>
+           <div class="university-d" id="hu-d">
+               <center><h2>Heidelberg University</h2></center>
+              <p>Heidelberg University is Germany's oldest university and one of the world's oldest surviving universities. It offers a wide range of undergraduate and graduate programs in the arts, humanities, natural sciences, and social sciences.</p>
+              <button onclick="apply(2)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+                <button onclick="info(2)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>
+              </div>
+           <div class="university-d" id="huob-d">
+              <center><h2>Humboldt University of Berlin</h2></center>
+              <p> Founded in 1810, the Humboldt University of Berlin is one of the most prestigious universities in Germany. It offers courses in humanities, natural sciences, and social sciences.</p>
+              <button onclick="apply(3)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+              <button onclick="info(3)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>
+           </div>
+           <div class="university-d" id="fuob-d">
+             <center><h2>Free University of Berlin</h2></center>
+             <p>Founded in 1948, the Free University of Berlin is one of the most renowned universities in Germany. It offers courses in humanities, natural sciences, and social sciences.</p>
+             <button onclick="apply(4)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+             <button onclick="info(4)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>
+           </div>
+           <div class="university-d" id="uoc-d">
+              <center><h2>University of Cologne</h2></center>
+              <p>Founded in 1388, the University of Cologne is one of the oldest universities in Germany. It is renowned for its research facilities and offers courses in humanities, natural sciences, and social sciences.</p>
+              <button onclick="apply(5)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+              <button onclick="info(5)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>
+           </div>
+           <div class="university-d" id="uob-d">
+                <center><h2>University of Bonn</h2></center>
+                <p>Founded in 1818, the University of Bonn is one of the most prestigious universities in Germany. It offers courses in humanities, natural sciences, and social sciences</p>
+                <button onclick="apply(6)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+                <button onclick="info(6)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>
+            </div>
+           <div class="university-d" id="uos-d">
+                <center><h2>University of Stuttgart</h2></center>
+                <p>Founded in 1829, the University of Stuttgart is one of the oldest technical universities in Germany. It offers courses in engineering, natural sciences, and business management.</p>
+                <button onclick="apply(7)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+                <button onclick="info(7)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>
+           </div>
+           <div class="university-d" id="uom-d">
+             <center><h2>University of Mannheim</h2></center>
+             <p> Founded in 1907, the University of Mannheim is one of the most renowned universities in Germany. It offers courses in business management, economics, and social sciences.</p>
+             <button onclick="apply(8)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+             <button onclick="info(8)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>
+           </div>
+           <div class="university-d" id="uoh-d">
+             <center><h2>University of Hamburg</h2></center>
+             <p>Founded in 1919, the University of Hamburg is one of the most prestigious universities in Germany. It offers courses in humanities, natural sciences, and social sciences.</p>
+             <button onclick="apply(9)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+             <button onclick="info(9)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>
+            </div>
+            <div class="university-d" id="uof-d">
+               <center><h2>University of Frankfurt</h2></center>
+               <p> Founded in 1914, the University of Frankfurt is one of the most renowned universities in Germany. It offers courses in humanities, natural sciences, and social sciences.</p>
+               <button onclick="apply(10)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+               <button onclick="info(10)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>
+           </div>
+           <div class="university-d" id="lmu-d">
+               <center><h2>University of Munich (LMU)</h2></center>
+              <p>Founded in 1472, LMU is one of the oldest universities in Germany. It offers courses in humanities, natural sciences, and social sciences.</p>
+              <button onclick="apply(11)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+              <button onclick="info(11)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button> 
+            </div>
+            <div class="university-d" id="uoen-d">
+               <center><h2>University of Erlangen-Nuremberg</h2></center>
+               <p> Founded in 1743, the University of Erlangen-Nuremberg is one of the oldest universities in Germany. It offers courses in humanities, natural sciences, and social sciences.</p>
+               <button onclick="apply(12)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+               <button onclick="info(12)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>
+            </div>
+            <div class="university-d" id="uog-d">
+               <center><h2>University of Göttingen</h2></center>
+               <p> Founded in 1737, the University of Göttingen is one of the oldest universities in Germany. It is renowned for its research facilities and offers courses in humanities, natural sciences, and social sciences.</p>
+               <button onclick="apply(13)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+               <button onclick="info(13)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>  
+           </div>
+           <div class="university-d" id="uow-d">
+               <center><h2>University of Würzburg</h2></center>
+               <p>Founded in 1402, the University of Würzburg is one of the oldest universities in Germany. It offers courses in humanities, natural sciences, and social sciences.</p>
+               <button onclick="apply(14)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+               <button onclick="info(14)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>  
+           </div>
+           <div class="university-d" id="uofr-d">
+               <center><h2>University of Freiburg</h2></center>
+               <p>Founded in 1457, the University of Freiburg is one of the oldest universities in Germany. It is renowned for its research facilities and offers courses in humanities, natural sciences, and social sciences.</p>
+               <button onclick="apply(15)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+               <button onclick="info(15)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>  
+           </div>
+           <div class="university-d" id="uoj-d">
+               <center><h2>University of Jena</h2></center>
+               <p>Founded in 1558, the University of Jena is one of the oldest universities in Germany. It offers courses in humanities, natural sciences, and social sciences.</p>
+               <button onclick="apply(16)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+               <button onclick="info(16)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>  
+           </div>
+           <div class="university-d" id="uol-d">
+               <center><h2>University of Leipzig</h2></center>
+               <p> Founded in 1409, the University of Leipzig is one of the oldest universities in Germany. It is renowned for its research facilities and offers courses in humanities, natural sciences, and social sciences.</p>
+               <button onclick="apply(17)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+               <button onclick="info(17)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>  
+           </div>
+           <div class="university-d" id="uot-d">
+               <center><h2>University of Tübingen</h2></center>
+               <p>Founded in 1477, the University of Tübingen is one of the oldest universities in Germany. It offers courses in humanities, natural sciences, and social sciences.</p>
+               <button onclick="apply(18)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+               <button onclick="info(18)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>   
+           </div>
+           <div class="university-d" id="uom-d">
+               <center><h2>University of Münster</h2></center>
+               <p>Founded in 1780, the University of Münster is one of the oldest universities in Germany. It offers courses in humanities, natural sciences, and social sciences.</p>
+               <button onclick="apply(19)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+               <button onclick="info(19)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>   
+            </div>
+            <div class="university-d" id="rau-d">
+              <center><h2>RWTH Aachen University</h2></center>
+              <p> Founded in 1870, RWTH Aachen University is one of the leading technical universities in Germany. It offers courses in engineering, natural sciences, and business management.</p>
+              <button onclick="apply(20)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+              <button onclick="info(20)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>  
+            </div>
+        <!--close of display of hidden div-->
+       <!--Beginning of display of universities-->
+        </div>
+		<div class="university" id="tum">
+			<center><h2>Technical University of Munich (TUM) </h2></center>
+			<p>The Technical University of Munich (TUM) is a research university with a focus on natural sciences, engineering, and technology. It offers undergraduate and graduate programs in engineering, natural sciences, economics, and medicine.</p>
+            <button onclick="apply(1)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+            <button onclick="info(1)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>
+
+		</div>
+		<div class="university" id="hu">
+        <center><h2>Heidelberg University</h2></center>
+			<p>Heidelberg University is Germany's oldest university and one of the world's oldest surviving universities. It offers a wide range of undergraduate and graduate programs in the arts, humanities, natural sciences, and social sciences.</p>
+            <button onclick="apply(2)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+            <button onclick="info(2)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>   
+		</div>
+        <div class="university" id="huob">
+        <center><h2>Humboldt University of Berlin</h2></center>
+            <p> Founded in 1810, the Humboldt University of Berlin is one of the most prestigious universities in Germany. It offers courses in humanities, natural sciences, and social sciences.</p>
+            <button onclick="apply(3)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+            <button onclick="info(3)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>   
+        </div>
+        <div class="university" id="fuob">
+        <center><h2>Free University of Berlin</h2></center>
+            <p>Founded in 1948, the Free University of Berlin is one of the most renowned universities in Germany. It offers courses in humanities, natural sciences, and social sciences.</p>
+            <button onclick="apply(4)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+            <button onclick="info(4)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>   
+        </div>
+        <div class="university" id="uoc">
+        <center><h2>University of Cologne</h2></center>
+            <p>Founded in 1388, the University of Cologne is one of the oldest universities in Germany. It is renowned for its research facilities and offers courses in humanities, natural sciences, and social sciences.</p>
+            <button onclick="apply(5)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+            <button onclick="info(5)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>   
+        </div>
+        <div class="university" id="uob">
+        <center><h2>University of Bonn</h2></center>
+            <p>Founded in 1818, the University of Bonn is one of the most prestigious universities in Germany. It offers courses in humanities, natural sciences, and social sciences</p>
+            <button onclick="apply(6)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+            <button onclick="info(6)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>   
+        </div>
+        <div class="university" id="uos">
+        <center><h2>University of Stuttgart</h2></center>
+            <p>Founded in 1829, the University of Stuttgart is one of the oldest technical universities in Germany. It offers courses in engineering, natural sciences, and business management.</p>
+            <button onclick="apply(7)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+            <button onclick="info(7)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>   
+        </div>
+        <div class="university" id="uom">
+        <center><h2>University of Mannheim</h2></center>
+            <p> Founded in 1907, the University of Mannheim is one of the most renowned universities in Germany. It offers courses in business management, economics, and social sciences.</p>
+            <button onclick="apply(8)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+            <button onclick="info(8)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>   
+        </div>
+        <div class="university" id="uoh">
+        <center><h2>University of Hamburg</h2></center>
+            <p>Founded in 1919, the University of Hamburg is one of the most prestigious universities in Germany. It offers courses in humanities, natural sciences, and social sciences.</p>
+            <button onclick="apply(9)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+            <button onclick="info(9)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>   
+        </div>
+        <div class="university" id="uof">
+        <center><h2>University of Frankfurt</h2></center>
+            <p> Founded in 1914, the University of Frankfurt is one of the most renowned universities in Germany. It offers courses in humanities, natural sciences, and social sciences.</p>
+            <button onclick="apply(10)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+            <button onclick="info(10)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>    
+        </div>
+        <div class="university" id="lmu">
+        <center><h2>University of Munich (LMU)</h2></center>
+            <p>Founded in 1472, LMU is one of the oldest universities in Germany. It offers courses in humanities, natural sciences, and social sciences.</p>
+            <button onclick="apply(11)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+            <button onclick="info(11)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>    
+        </div>
+        <div class="university" id="uoen">
+        <center><h2>University of Erlangen-Nuremberg</h2></center>
+            <p> Founded in 1743, the University of Erlangen-Nuremberg is one of the oldest universities in Germany. It offers courses in humanities, natural sciences, and social sciences.</p>
+            <button onclick="apply(12)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+            <button onclick="info(12)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>   
+        </div>
+        <div class="university" id="uog">
+        <center><h2>University of Göttingen</h2></center>
+            <p> Founded in 1737, the University of Göttingen is one of the oldest universities in Germany. It is renowned for its research facilities and offers courses in humanities, natural sciences, and social sciences.</p>
+            <button onclick="apply(13)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+            <button onclick="info(13)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>   
+        </div>
+        <div class="university" id="uow">
+        <center><h2>University of Würzburg</h2></center>
+            <p>Founded in 1402, the University of Würzburg is one of the oldest universities in Germany. It offers courses in humanities, natural sciences, and social sciences.</p>
+            <button onclick="apply(14)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+            <button onclick="info(14)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>   
+        </div>
+        <div class="university" id="uofr">
+        <center><h2>University of Freiburg</h2></center>
+            <p>Founded in 1457, the University of Freiburg is one of the oldest universities in Germany. It is renowned for its research facilities and offers courses in humanities, natural sciences, and social sciences.</p>
+            <button onclick="apply(15)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+                <button onclick="info(15)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>
+        </div>
+        <div class="university" id="uoj">
+        <center><h2>University of Jena</h2></center>
+            <p>Founded in 1558, the University of Jena is one of the oldest universities in Germany. It offers courses in humanities, natural sciences, and social sciences.</p>
+            <button onclick="apply(16)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+            <button onclick="info(16)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>   
+        </div>
+        <div class="university" id="uol">
+        <center><h2>University of Leipzig</h2></center>
+            <p> Founded in 1409, the University of Leipzig is one of the oldest universities in Germany. It is renowned for its research facilities and offers courses in humanities, natural sciences, and social sciences.</p>
+            <button onclick="apply(17)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+            <button onclick="info(17)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>   
+        </div>
+		<div class="university" id="uot">
+        <center><h2>University of Tübingen</h2></center>
+			<p>Founded in 1477, the University of Tübingen is one of the oldest universities in Germany. It offers courses in humanities, natural sciences, and social sciences.</p>
+            <button onclick="apply(18)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+            <button onclick="info(18)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>   
+		</div>
+		<div class="university" id="uom">
+        <center><h2>University of Münster</h2></center>
+			<p>Founded in 1780, the University of Münster is one of the oldest universities in Germany. It offers courses in humanities, natural sciences, and social sciences.</p>
+            <button onclick="apply(19)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+            <button onclick="info(19)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>   
+		</div>
+		<div class="university" id="rau">
+        <center><h2>RWTH Aachen University</h2></center>
+			<p> Founded in 1870, RWTH Aachen University is one of the leading technical universities in Germany. It offers courses in engineering, natural sciences, and business management.</p>
+            <button onclick="apply(20)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:50px;margin-left:13%">Apply</button>
+            <button onclick="info(20)"style="background-color:yellow;border:1px solid black;color:black;margin-top:10%;width:100px;margin-left:50%">More info</button>    
+		</div>
+        <div class="apply" id="apply">
+          <form method="post">
+            <center><h3> 
+                Download application form
+            </h3><br>
+            <a href="form.zip" download>here</a></center><br>
+            <div class="applydoc_container">
+
+            </div><br>
+            <button id="submit" >Apply</button>
+        </div>   
+        </form>
+        <script>
+            function download(){
+                
+            }
+        </script>
+   </div>
+</div>
+</body>
+</html>
